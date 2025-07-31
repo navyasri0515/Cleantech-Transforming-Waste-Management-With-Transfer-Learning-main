@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<!-- ── HERO ─────────────────────────────────────────── -->
+<header id="hero">
+  <div class="hero-box">
+    <h1 data-aos="fade-up">Transforming Beach Waste with&nbsp;AI</h1>
+    <p data-aos="fade-up" data-aos-delay="150">
+      Instant litter classification • Smarter recycling • Cleaner coastlines
+    </p>
+
+    <!-- Primary CTA now leads to portfolio page -->
+    <a href="{{ url_for('portfolio') }}" class="btn btn-brand btn-lg me-2"
+       data-aos="fade-up" data-aos-delay="300">
+      Try Classifier
+    </a>
+    <a href="#features" class="btn btn-outline-light btn-lg"
+       data-aos="fade-up" data-aos-delay="350">
+      Key&nbsp;Features
+    </a>
+  </div>
+</header>
+
+<!-- ── KEY FEATURES (NEW, right below hero) ─────────────────── -->
+<section id="features" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-5" data-aos="fade-up">Key Features</h2>
+    <div class="row text-center g-4">
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+        <div class="card h-100 shadow-sm border-success">
+          <div class="card-body">
+            <h3 class="card-title text-success">🌊 Coastal Analytics</h3>
+            <p class="card-text">
+              Heat-maps reveal litter hotspots, guiding crews to critical zones.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+        <div class="card h-100 shadow-sm border-info">
+          <div class="card-body">
+            <h3 class="card-title text-info">🚛 Fleet Routing</h3>
+            <p class="card-text">
+              Live composition data sends trucks directly to compost, recycle, or landfill hubs.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+        <div class="card h-100 shadow-sm border-danger">
+          <div class="card-body">
+            <h3 class="card-title text-danger">📈 Sustainability Reports</h3>
+            <p class="card-text">
+              Monthly dashboards quantify plastic vs.&nbsp;organic trends for policy decisions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Secondary CTA marches users to About -->
+    <div class="text-center mt-5">
+      <a href="#about" class="btn btn-primary btn-lg">Learn&nbsp;More</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT SECTION (unchanged) ────────────────────────────── -->
+<section id="about" class="alt-bg">
+  <div class="container">
+    <h2 class="text-center mb-4" data-aos="fade-up">About CleanTech</h2>
+    <p class="fs-5" data-aos="fade-up" data-aos-delay="100">
+      <!-- existing about text … -->
+    </p>
+    <!-- your existing feature cards etc. -->
+  </div>
+</section>
+
+{% endblock %}

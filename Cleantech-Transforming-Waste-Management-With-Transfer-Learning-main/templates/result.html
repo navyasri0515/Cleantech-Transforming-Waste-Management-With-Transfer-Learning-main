@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Prediction Result{% endblock %}
+{% block content %}
+<section class="py-5">
+  <div class="container text-center">
+    <h2 class="mb-3">Prediction: <strong>{{ label }}</strong></h2>
+    <p class="lead mb-4">Confidence: <strong>{{ conf }}</strong></p>
+
+    <img src="{{ url_for('static', filename='uploads/' + filename) }}"
+         class="img-fluid mb-4 rounded shadow" style="max-width: 320px;">
+
+    <!-- Colorful Progress Bars -->
+    <div class="mx-auto" style="max-width: 500px; text-align: left;">
+      {% for cls, pct in probs.items() %}
+        {% set pct_val = pct.replace('%', '') | float %}
+        {% if cls == 'Biodegradable' %}
+          {% set bar_color = '#28a745' %}
+        {% elif cls == 'Recyclable' %}
+          {% set bar_color = '#ffc107' %}
+        {% else %}
+          {% set bar_color = '#dc3545' %}
+        {% endif %}
+
+        <p class="mb-1"><strong>{{ cls }}</strong> <span class="float-end">{{ pct }}</span></p>
+        <div class="progress mb-4" role="progressbar" aria-valuenow="{{ pct_val }}" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar" style="width: {{ pct_val }}%; background-color: {{ bar_color }};">
+            {{ pct }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <a href="{{ url_for('classify') }}" class="btn btn-primary mt-3">Try Another</a>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Classifier{% endblock %}
+{% block content %}
+<section id="classifier">
+  <div class="container">
+    <h2 class="text-center mb-4" data-aos="fade-up">AI Waste Image Classifier</h2>
+    <p class="text-center mb-4" data-aos="fade-up" data-aos-delay="100">
+      Upload a coastal litter photo and our AI will classify it instantly.
+    </p>
+    <form method="POST" enctype="multipart/form-data"
+          class="d-flex flex-column gap-3 justify-content-center align-items-center"
+          data-aos="fade-up" data-aos-delay="200">
+      <input class="form-control w-50" type="file" name="file" accept="image/*" required>
+      <button class="btn btn-success px-4">Predict</button>
+    </form>
+  </div>
+</section>
+{% endblock %}

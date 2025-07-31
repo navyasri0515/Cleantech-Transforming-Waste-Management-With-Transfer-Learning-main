@@ -1,0 +1,29 @@
+/* RESET / BASICS */
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif;}
+html{scroll-behavior:smooth;} body{background:#f3f6fa;line-height:1.6;color:#222}
+
+/* NAVBAR */
+.navbar{backdrop-filter:blur(8px);}
+
+/* HERO */
+#hero{height:100vh;background:url("/static/assets/hero.jpg") center/cover no-repeat fixed;
+      position:relative;display:flex;justify-content:center;align-items:center;}
+#hero::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.55);}
+#hero .hero-box{position:relative;z-index:1;color:#fff;text-align:center}
+#hero h1{font-size:3rem;font-weight:700;line-height:1.2}
+#hero p{font-size:1.25rem;margin-bottom:30px}
+
+/* SECTIONS */
+section{padding:80px 0} .alt-bg{background:#ffffff;}
+.btn-brand{background:#0078d4;color:#fff;border:none} .btn-brand:hover{background:#005fa3}
+
+/* CLASSIFIER */
+#classifier form{max-width:500px;margin:auto}
+.progress{height:22px}.progress-bar{background:#0078d4}
+
+/* FOOTER */
+footer{background:#001d3d;color:#fff;text-align:center;padding:25px 0}
+
+/* AOS Fallback (if JS blocked) */
+[data-aos]{opacity:0;transform:translateY(40px);transition:all .6s ease-out}
+[data-aos].aos-animate{opacity:1;transform:none}

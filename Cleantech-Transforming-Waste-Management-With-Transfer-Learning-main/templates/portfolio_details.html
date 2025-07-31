@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block title %}Project Portfolio – CleanTech{% endblock %}
+
+{% block content %}
+
+<!-- ── HERO BANNER ─────────────────────────────────────────────── -->
+<header class="inner-hero d-flex align-items-center text-white"
+        style="background:url('{{ url_for('static', filename='assets/hero.jpg') }}') center/cover no-repeat;">
+  <div class="container text-center">
+    <h1 class="display-5 fw-bold" data-aos="fade-up">CleanTech Waste Classifier</h1>
+    <p class="lead" data-aos="fade-up" data-aos-delay="100">
+      AI-powered litter recognition for smarter cities
+    </p>
+  </div>
+</header>
+
+<!-- ── PROJECT OVERVIEW ────────────────────────────────────────── -->
+<section class="py-5 alt-bg">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- image -->
+      <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+        <img src="{{ url_for('static', filename='assets/hero.jpg') }}"
+             class="img-fluid rounded shadow" alt="CleanTech preview">
+      </div>
+
+      <!-- text -->
+      <div class="col-lg-6" data-aos="fade-left">
+        <h2 class="mb-3">Project Overview</h2>
+        <p class="fs-5">
+          CleanTech leverages <strong>transfer learning (VGG-16)</strong> to classify coastal
+          waste images into <em>Biodegradable</em>, <em>Recyclable</em>, and <em>Trash</em>.
+          Integrated with smart bins, drones, or city dashboards, the system automates sorting,
+          cuts labor costs, and boosts recycling yields.
+        </p>
+
+        <ul class="list-group list-group-flush mb-4">
+          <li class="list-group-item">🥇 Validation accuracy ≈ 80 %</li>
+          <li class="list-group-item">⚙️ Tech Stack: TensorFlow · Flask · Bootstrap 5</li>
+          <li class="list-group-item">🕒 Real-time inference &lt; 120 ms / image</li>
+          <li class="list-group-item">🌍 Deployable to edge devices (Jetson Nano)</li>
+        </ul>
+
+        <a href="{{ url_for('classify') }}" class="btn btn-brand btn-lg">
+          Try the Classifier
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FEATURE CARDS ──────────────────────────────────────────── -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-5" data-aos="fade-up">Key Features</h2>
+
+    <div class="row text-center g-4">
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h3 class="card-title">🌊 Coastal Analytics</h3>
+            <p class="card-text">
+              Heat maps reveal litter density, guiding clean-up crews to hotspots.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h3 class="card-title">🚛 Fleet Routing</h3>
+            <p class="card-text">
+              Live composition data routes trucks to compost, recycle, or landfill facilities.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h3 class="card-title">📈 Sustainability Reports</h3>
+            <p class="card-text">
+              Monthly dashboards quantify plastic vs. organic trends for policy and outreach.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CALL-TO-ACTION ─────────────────────────────────────────── -->
+<section class="py-5 alt-bg">
+  <div class="container text-center" data-aos="fade-up">
+    <h2 class="mb-4">Ready to see CleanTech in action?</h2>
+    <a href="{{ url_for('classify') }}" class="btn btn-success btn-lg px-5">
+      Upload an Image
+    </a>
+  </div>
+</section>
+
+{% endblock %}
